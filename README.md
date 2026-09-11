@@ -3,7 +3,7 @@
 
 # Dust
 
-du + rust = dust. Like du but more intuitive.
+du + typescript = dust. Like du but more intuitive.
 
 # Why
 
@@ -31,66 +31,25 @@ Study the above demo
 
 ## Install
 
-### Quick Install (Linux, macOS, Windows) 
+### npm
+
+- `npm install -g du-dust`
+
+Dust runs on Node.js 22.18 or newer, which executes its TypeScript sources
+directly. There is no compile step.
+
+### From source
+
 ```bash
-curl -sSfL https://raw.githubusercontent.com/bootandy/dust/refs/heads/master/install.sh | sh
+git clone https://github.com/bootandy/dust
+cd dust
+npm ci
+node src/main.ts --help
 ```
 
-### Cargo <a href="https://repology.org/project/du-dust/versions"><img src="https://repology.org/badge/vertical-allrepos/du-dust.svg" alt="Packaging status" align="right"></a>
-
-#### Cargo
-
-- `cargo install du-dust`
-
-#### 🍺 Homebrew (Mac OS)
-
-- `brew install dust`
-
-#### 🍺 Homebrew (Linux)
-
-- `brew install dust`
-
-#### DNF (Fedora Linux)
-
-- `sudo dnf install du-dust`
-
-#### [Snap](https://ubuntu.com/core/services/guide/snaps-intro) Ubuntu and [supported systems](https://snapcraft.io/docs/installing-snapd)
-
-- `snap install dust`
-
-Note: `dust` installed through `snap` can only access files stored in the `/home` directory. See danie-dejager/dust-snap#2 for more information.
-
-#### [mise](https://github.com/jdx/mise)
-
-- `mise use -g dust`
-
-#### [Pacstall](https://github.com/pacstall/pacstall) (Debian/Ubuntu)
-
-- `pacstall -I dust-bin`
-
-#### Anaconda (conda-forge)
-
-- `conda install -c conda-forge dust`
-
-#### [deb-get](https://github.com/wimpysworld/deb-get) (Debian/Ubuntu)
-
-- `deb-get install du-dust`
-
-#### [x-cmd](https://www.x-cmd.com/pkg/#VPContent)
-
-- `x env use dust`
-
-#### Windows:
-
-- `scoop install dust`
-- Windows GNU version - works
-- Windows MSVC - requires: [VCRUNTIME140.dll](https://docs.microsoft.com/en-gb/cpp/windows/latest-supported-vc-redist?view=msvc-170)
-
-#### Download
-
-- Download Linux/Mac binary from [Releases](https://github.com/bootandy/dust/releases)
-- unzip file: `tar -xvf _downloaded_file.tar.gz`
-- move file to executable path: `sudo mv dust /usr/local/bin/`
+`npm run build` type-checks the project and regenerates the shell completions
+in `completions/` and the man page in `man-page/` from the command definition;
+`node build.ts --check` asserts that the committed copies are current.
 
 ## Overview
 
